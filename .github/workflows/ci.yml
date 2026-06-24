@@ -317,6 +317,7 @@ jobs:
   # L'objectif est de revenir a la derniere version connue si le healthcheck
   # final echoue. Les consignes detaillees sont dans EXERCICE.md.
   # ---------------------------------------------------------------------------
+  
   healthcheck-deployment:
     name: Healthcheck deployment
     runs-on: ubuntu-latest
