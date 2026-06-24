@@ -1,6 +1,6 @@
 {
   "name": "tp-cd-deployment",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "API de gestion de tâches - Support TP cours-04 Continuous Deployment",
   "author": "",
   "private": false,
