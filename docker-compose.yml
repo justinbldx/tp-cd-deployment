@@ -7,6 +7,8 @@ services:
       - verdaccio-storage:/verdaccio/storage
     networks:
       - cd-network
+    ports:
+      - "4873:4873"
 
   registry:
     image: registry:2
@@ -15,7 +17,8 @@ services:
       - registry-storage:/var/lib/registry
     networks:
       - cd-network
-
+    ports:
+      - "5000:5000"
   ssh-npm-target:
     build:
       context: ./docker/ssh-target
