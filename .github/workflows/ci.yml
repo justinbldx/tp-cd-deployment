@@ -150,6 +150,9 @@ jobs:
     needs: [security]
     if: github.ref == 'refs/heads/main'
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -173,6 +176,9 @@ jobs:
 
       - name: Calculer la version
         run: npx commit-and-tag-version
+
+      - name: Push commit et tag
+        run: git push --follow-tags origin HEAD:main
 
   publish-npm:
     name: Publish npm
@@ -317,7 +323,7 @@ jobs:
   # L'objectif est de revenir a la derniere version connue si le healthcheck
   # final echoue. Les consignes detaillees sont dans EXERCICE.md.
   # ---------------------------------------------------------------------------
-  
+
   healthcheck-deployment:
     name: Healthcheck deployment
     runs-on: ubuntu-latest
